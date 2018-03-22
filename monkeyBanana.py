@@ -1,1 +1,29 @@
+#Christo Dragnev
+#3/22/18
+#monkeyBanana.py - the best game ever
 
+from ggame import *
+
+#constants
+ROWS = 30
+COLS = 70
+CELL_SIZE = 20
+
+#functions
+def moveRight(event):
+    monkey.x += CELL_SIZE
+
+if __name__ == '__main__':
+    
+    #colors
+    green = Color(0x006600,1)
+    brown = Color(0x8B4513,1)
+    
+    jungleBox = RectangleAsset(CELL_SIZE*COLS,CELL_SIZE*ROWS,LineStyle(1,green),green)
+    monkeyBox = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,brown),brown)
+    
+    Sprite(jungleBox)
+    monkey = Sprite(monkeyBox)
+    
+    App().listenKeyEvent('keydown','right arrow',moveRight)
+    App().run()
