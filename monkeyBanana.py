@@ -3,6 +3,7 @@
 #monkeyBanana.py - the best game ever
 
 from ggame import *
+from random import randint
 
 #constants
 ROWS = 26
@@ -11,18 +12,32 @@ CELL_SIZE = 20
 
 #functions
 def moveRight(event):
-    monkey.x += CELL_SIZE
-    if monkey.x == banana.x and monkey.y == banana.y:
-        print('Got it!')
+    if monkey.x < (COLS-1)*CELL_SIZE:
+        monkey.x += CELL_SIZE
+        if monkey.x == banana.x and monkey.y == banana.y:
+            moveBanana()
 
 def moveLeft(event):
-    monkey.x -= CELL_SIZE
+    if monkey.x>0:
+        monkey.x -= CELL_SIZE
+        if monkey.x == banana.x and monkey.y == banana.y:
+            moveBanana()
 
 def moveUp(event):
-    monkey.y -= CELL_SIZE
+    if monkey.y > 0:
+        monkey.y -= CELL_SIZE
+        if monkey.x == banana.x and monkey.y == banana.y:
+            moveBanana()
 
 def moveDown(event):
-    monkey.y += CELL_SIZE
+    if monkey.y < (ROWS-1)*CELL_SIZE:
+        monkey.y += CELL_SIZE
+        if monkey.x == banana.x and monkey.y == banana.y:
+            moveBanana()
+
+def moveBanana():
+    banana.x = randint(0,COLS-1)*CELL_SIZE
+    banana.y = randint(0,ROWS-1)*CELL_SIZE
 
 if __name__ == '__main__':
     
