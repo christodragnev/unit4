@@ -4,8 +4,8 @@
 
 def stringUnion(a,b):
     answer = ''
-    for ch in a and ch in b:
-        if ch != answer:
-            answer+=str(ch)
-            
-stringUnion('Mississippi','Pennsylvania')
+    for ch in a.lower()+b.lower():
+        if ch not in answer:
+            answer+=ch
+    return answer
+print(stringUnion('Mississippi','Pennsylvania'))
