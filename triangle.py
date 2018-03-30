@@ -15,5 +15,5 @@ a = distance(x1,y1,x2,y2)
 b = distance(x1,y1,x3,y3)
 c = distance(x2,y2,x3,y3)
 s = 1/2*(a+b+c)
-area = (s*(s-a)*(s-b)*(s-c))**0.5
-print(area)
+print('Area is ',(s*(s-a)*(s-b)*(s-c))**0.5)
+
