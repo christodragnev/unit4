@@ -13,8 +13,7 @@ def excitedPrint(a):
 
 def firstLetter(a):
     for ch in a:
-        if ch in 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz':
-            return str(a)-(str(a)-str(ch))
+        return ch
 def repeats(a,b,c):
     if a==b or a==c or b==c:
         return True
