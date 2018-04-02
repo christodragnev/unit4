@@ -7,23 +7,22 @@ def count(a):
     while i<a:
         print(i)
         i+=1
-count(10)
 
 def excitedPrint(a):
     print(a.upper()+'!!!')
-excitedPrint('I <3 Programming')
 
 def firstLetter(a):
     for ch in a:
-        if ch in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
-            print(ch.upper())
-firstLetter("Smedinghoff")
-
+        if ch in 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz':
+            return str(a)-(str(a)-str(ch))
 def repeats(a,b,c):
     if a==b or a==c or b==c:
         return True
     else:
         return False
 
+count(10)
+excitedPrint('I <3 Programming')
+firstLetter("Smedinghoff")
 print(repeats(5,6,5))
     
